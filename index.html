@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -8,79 +9,46 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abel&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/style.css?v=0.2" />
+    <script src="js/htmx.min.js"></script> <!-- HTMX -->
+</head>
 
-    <!-- HTMX -->
-    <script src="js/htmx.min.js"></script>
-  </head>
-
-  <body>
+<body>
     <!-- Persistent top navigation -->
     <header class="topbar">
-      <button
-        class="menu-toggle"
-        id="menu-toggle"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="navigation"
-      >
-        ☰
-      </button>
-
-      <nav class="navigation" id="navigation" aria-label="Main navigation">
-        <button
-          hx-get="pages/mjm.html"
-          hx-target="#page-content"
-          hx-swap="innerHTML"
-        >
-          mjm
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
+            aria-controls="navigation">
+            ☰
         </button>
 
-        <button
-          hx-get="pages/nosotros.html"
-          hx-target="#page-content"
-          hx-swap="innerHTML"
-        >
-          nosotros
-        </button>
+        <nav class="navigation" id="navigation" aria-label="Main navigation">
+            <button hx-get="pages/mjm.html" hx-target="#page-content" hx-swap="innerHTML">
+                mjm
+            </button>
 
-        <button
-          hx-get="pages/fireflowers.html"
-          hx-target="#page-content"
-          hx-swap="innerHTML"
-        >
-          fireflowers
-        </button>
+            <button hx-get="pages/fireflowers.html" hx-target="#page-content" hx-swap="innerHTML">
+                fireflowers
+            </button>
 
-        <button
-          hx-get="pages/invaders.html"
-          hx-target="#page-content"
-          hx-swap="innerHTML"
-        >
-          invaders
-        </button>
+            <button hx-get="pages/invaders.html" hx-target="#page-content" hx-swap="innerHTML">
+                invaders
+            </button>
 
-        <button
-          hx-get="pages/contacto.html"
-          hx-target="#page-content"
-          hx-swap="innerHTML"
-        >
-          contacto
-        </button>
-      </nav>
+            <button hx-get="pages/contacto.html" hx-target="#page-content" hx-swap="innerHTML">
+                contacto
+            </button>
+        </nav>
     </header>
 
     <!-- HTMX replaces only this section -->
     <main id="page-content">
-      <h1>mjm</h1>
+        <h1>mjm</h1>
     </main>
 
     <!-- Your existing menu JavaScript -->
     <script src="js/script.js?v=0.2"></script>
-  </body>
+</body>
+
 </html>
