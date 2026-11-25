@@ -176,7 +176,18 @@ main h6 {
     font-size: 22px;
     font-weight: normal;
 }
+/* ========================================
+        TRANSITIONS
+ ========================================*/
 
+#fade-me-in.htmx-added {
+  opacity: 0;
+}
+
+#fade-me-in {
+  opacity: 1;
+  transition: opacity 2s ease-out;
+}
 /* ========================================
    RESPONSIVE - MOBILE
 ======================================== */
