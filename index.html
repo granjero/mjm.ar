@@ -6,7 +6,6 @@
 
     <title>mjm</title>
 
-    <!-- Google Font: Abel -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,17 +13,15 @@
       rel="stylesheet"
     />
 
-    <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Main JavaScript -->
-    <script src="js/script.js" defer></script>
+    <!-- HTMX -->
+    <script src="js/htmx.min.js"></script>
   </head>
 
   <body>
-    <!-- Top navigation bar -->
+    <!-- Persistent top navigation -->
     <header class="topbar">
-      <!-- Mobile hamburger button -->
       <button
         class="menu-toggle"
         id="menu-toggle"
@@ -35,22 +32,55 @@
         ☰
       </button>
 
-      <!-- Main navigation (desktop and mobile) -->
       <nav class="navigation" id="navigation" aria-label="Main navigation">
-        <a href="#mjm">mjm</a>
-        <a href="#nosotros">nosotros</a>
-        <a href="#fireflowers">fireflowers</a>
-        <a href="#invaders">invaders</a>
-        <a href="#contacto">contacto</a>
+        <a
+          href="pages/mjm.html"
+          hx-get="pages/mjm.html"
+          hx-target="#page-content"
+          hx-swap="innerHTML"
+          >mjm</a
+        >
+
+        <a
+          href="pages/nosotros.html"
+          hx-get="pages/nosotros.html"
+          hx-target="#page-content"
+          hx-swap="innerHTML"
+          >nosotros</a
+        >
+
+        <a
+          href="pages/fireflowers.html"
+          hx-get="pages/fireflowers.html"
+          hx-target="#page-content"
+          hx-swap="innerHTML"
+          >fireflowers</a
+        >
+
+        <a
+          href="pages/invaders.html"
+          hx-get="pages/invaders.html"
+          hx-target="#page-content"
+          hx-swap="innerHTML"
+          >invaders</a
+        >
+
+        <a
+          href="pages/contacto.html"
+          hx-get="pages/contacto.html"
+          hx-target="#page-content"
+          hx-swap="innerHTML"
+          >contacto</a
+        >
       </nav>
     </header>
 
-    <!-- Background overlay -->
-    <div class="menu-overlay" id="menu-overlay"></div>
-
-    <!-- Main page content -->
-    <main id="mjm">
+    <!-- HTMX replaces only this section -->
+    <main id="page-content">
       <h1>mjm</h1>
     </main>
+
+    <!-- Your existing menu JavaScript -->
+    <script src="js/script.js"></script>
   </body>
 </html>
