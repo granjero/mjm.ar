@@ -1,0 +1,226 @@
+/* ========================================
+   GENERAL
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Abel", sans-serif;
+    font-size: 120px;
+
+    background: #ffffff;
+    color: #000000;
+}
+
+
+/* ========================================
+   TOPBAR
+======================================== */
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 0 30px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+
+    z-index: 1003;
+}
+
+
+/* ========================================
+   DESKTOP MENU
+======================================== */
+
+.desktop-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.desktop-menu a {
+    color: #000000;
+    text-decoration: none;
+
+    font-size: 20px;
+    transition: opacity 0.2s ease;
+}
+
+.desktop-menu a:hover {
+    opacity: 0.5;
+}
+
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
+
+.menu-toggle {
+    display: none;
+    z-index: 1003;
+
+    border: none;
+    background: none;
+
+    color: #000000;
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   MOBILE SIDEBAR
+======================================== */
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* ========================================
+   OVERLAY
+======================================== */
+
+.menu-overlay {
+    display: none;
+}
+
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main h1 {
+    margin: 0;
+    font-size: 120px;
+    font-weight: normal;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .topbar {
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+}
+
+/* ========================================
+   MOBILE SIDEBAR
+======================================== */
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+
+    padding: 80px 25px 25px;
+    gap: 25px;
+
+    background: #ffffff;
+
+    /* Keep the sidebar outside the viewport */
+    transform: translateX(-100%);
+
+    /* Animate the sidebar movement */
+    transition: transform 0.3s ease;
+
+    z-index: 1002;
+}
+
+.mobile-menu a {
+    color: #000000;
+    text-decoration: none;
+
+    font-size: 22px;
+}
+
+.mobile-menu a:hover {
+    opacity: 0.5;
+}
+
+
+/* ========================================
+   SIDEBAR OPEN STATE
+======================================== */
+
+.mobile-menu.active {
+    transform: translateX(0);
+}
+
+
+/* ========================================
+   BACKGROUND OVERLAY
+======================================== */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 1001;
+}
+
+
+/* ========================================
+   OVERLAY VISIBLE STATE
+======================================== */
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
