@@ -12,7 +12,6 @@ body {
     min-height: 100vh;
 
     font-family: "Abel", sans-serif;
-    /* font-size: 120px; */
 
     background: #ffffff;
     color: #000000;
@@ -54,7 +53,21 @@ body {
     gap: 30px;
 }
 
-.navigation a {
+.navigation a,
+.navigation button {
+    color: #000000;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: normal;
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
     color: #000000;
     text-decoration: none;
 
@@ -63,7 +76,8 @@ body {
     transition: opacity 0.2s ease;
 }
 
-.navigation a:hover {
+.navigation a:hover,
+.navigation button:hover {
     opacity: 0.5;
 }
 

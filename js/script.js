@@ -9,7 +9,7 @@ const menuToggle = document.getElementById("menu-toggle");
 const navigation = document.getElementById("navigation");
 
 // Get all navigation links.
-const menuLinks = navigation.querySelectorAll("a");
+const menuLinks = navigation.querySelectorAll("a, button");
 
 
 /* ========================================
