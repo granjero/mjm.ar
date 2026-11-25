@@ -149,31 +149,31 @@ main h1 {
 
 main h2 {
     margin: 0 0 20px;
-    font-size: 72px;
+    font-size: 80px;
     font-weight: normal;
 }
 
 main h3 {
     margin: 0 0 16px;
-    font-size: 48px;
+    font-size: 55px;
     font-weight: normal;
 }
 
 main h4 {
     margin: 0 0 12px;
-    font-size: 36px;
+    font-size: 42px;
     font-weight: normal;
 }
 
 main h5 {
     margin: 0 0 10px;
-    font-size: 28px;
+    font-size: 35px;
     font-weight: normal;
 }
 
 main h6 {
     margin: 0 0 8px;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: normal;
 }
 /* ========================================
