@@ -75,6 +75,30 @@ function toggleMenu() {
 
 }
 
+/* ========================================
+   SELECT MENU ITEM
+======================================== */
+
+/**
+ * Highlights the selected menu item.
+ *
+ * Removes the highlight from previously selected items
+ * and adds it to the clicked item.
+ */
+function selectMenuItem(selectedItem) {
+
+    // Remove the active class from every menu item.
+    menuLinks.forEach(function(item) {
+
+        item.classList.remove("active");
+
+    });
+
+    // Highlight the selected item.
+    selectedItem.classList.add("active");
+
+}
+
 
 /* ========================================
    EVENT LISTENERS
@@ -84,12 +108,27 @@ function toggleMenu() {
 menuToggle.addEventListener("click", toggleMenu);
 
 
-// Close the navigation when selecting an option.
+// Handle menu item selection.
 menuLinks.forEach(function(link) {
 
-    link.addEventListener("click", closeMenu);
+    link.addEventListener("click", function() {
+
+        // Highlight the selected menu item.
+        selectMenuItem(link);
+
+        // Close the mobile navigation.
+        closeMenu();
+
+    });
 
 });
+
+// Close the navigation when selecting an option.
+// menuLinks.forEach(function(link) {
+//
+//     link.addEventListener("click", closeMenu);
+//
+// });
 
 
 // Close the navigation when pressing the Escape key.
