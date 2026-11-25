@@ -6,14 +6,14 @@
 // Get the hamburger button.
 const menuToggle = document.getElementById("menu-toggle");
 
-// Get the mobile sidebar.
-const mobileMenu = document.getElementById("mobile-menu");
+// Get the navigation element (desktop and mobile).
+const navigation = document.getElementById("navigation");
 
 // Get the background overlay.
 const menuOverlay = document.getElementById("menu-overlay");
 
-// Get all navigation links inside the mobile sidebar.
-const menuLinks = mobileMenu.querySelectorAll("a");
+// Get all navigation links.
+const menuLinks = navigation.querySelectorAll("a");
 
 
 /* ========================================
@@ -21,14 +21,14 @@ const menuLinks = mobileMenu.querySelectorAll("a");
 ======================================== */
 
 /**
- * Opens the mobile sidebar.
+ * Opens the mobile navigation sidebar.
  *
- * Adds the "active" class to the sidebar and overlay.
+ * Adds the "active" class to the navigation and overlay.
  * Updates the accessibility attributes of the hamburger button.
  */
 function openMenu() {
 
-    mobileMenu.classList.add("active");
+    navigation.classList.add("active");
 
     menuOverlay.classList.add("active");
 
@@ -44,14 +44,14 @@ function openMenu() {
 ======================================== */
 
 /**
- * Closes the mobile sidebar.
+ * Closes the mobile navigation sidebar.
  *
- * Removes the "active" class from the sidebar and overlay.
+ * Removes the "active" class from the navigation and overlay.
  * Resets the accessibility attributes of the hamburger button.
  */
 function closeMenu() {
 
-    mobileMenu.classList.remove("active");
+    navigation.classList.remove("active");
 
     menuOverlay.classList.remove("active");
 
@@ -67,14 +67,14 @@ function closeMenu() {
 ======================================== */
 
 /**
- * Toggles the sidebar between open and closed.
+ * Toggles the mobile navigation between open and closed.
  *
- * Checks whether the sidebar is currently open.
- * If it is open, close it. Otherwise, open it.
+ * Checks whether the navigation currently has the "active" class.
+ * If it does, close it. Otherwise, open it.
  */
 function toggleMenu() {
 
-    if (mobileMenu.classList.contains("active")) {
+    if (navigation.classList.contains("active")) {
 
         closeMenu();
 
@@ -91,15 +91,15 @@ function toggleMenu() {
    EVENT LISTENERS
 ======================================== */
 
-// Open or close the sidebar when clicking the hamburger.
+// Open or close the navigation when clicking the hamburger.
 menuToggle.addEventListener("click", toggleMenu);
 
 
-// Close the sidebar when clicking the background overlay.
+// Close the navigation when clicking the background overlay.
 menuOverlay.addEventListener("click", closeMenu);
 
 
-// Close the sidebar when selecting a navigation option.
+// Close the navigation when selecting an option.
 menuLinks.forEach(function(link) {
 
     link.addEventListener("click", closeMenu);
@@ -107,7 +107,7 @@ menuLinks.forEach(function(link) {
 });
 
 
-// Close the sidebar when pressing the Escape key.
+// Close the navigation when pressing the Escape key.
 document.addEventListener("keydown", function(event) {
 
     if (event.key === "Escape") {
@@ -123,7 +123,7 @@ document.addEventListener("keydown", function(event) {
    WINDOW RESIZE
 ======================================== */
 
-// Close the mobile sidebar when switching to desktop layout.
+// Close the mobile navigation when switching to desktop layout.
 window.addEventListener("resize", function() {
 
     if (window.innerWidth > 768) {

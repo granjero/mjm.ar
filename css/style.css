@@ -1,3 +1,4 @@
+
 /* ========================================
    GENERAL
 ======================================== */
@@ -39,29 +40,30 @@ body {
     background: #ffffff;
     border-bottom: 1px solid #e5e5e5;
 
-    z-index: 1003;
+    z-index: 1000;
 }
 
 
 /* ========================================
-   DESKTOP MENU
+   NAVIGATION
 ======================================== */
 
-.desktop-menu {
+.navigation {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.desktop-menu a {
+.navigation a {
     color: #000000;
     text-decoration: none;
 
     font-size: 20px;
+
     transition: opacity 0.2s ease;
 }
 
-.desktop-menu a:hover {
+.navigation a:hover {
     opacity: 0.5;
 }
 
@@ -72,7 +74,6 @@ body {
 
 .menu-toggle {
     display: none;
-    z-index: 1003;
 
     border: none;
     background: none;
@@ -81,24 +82,6 @@ body {
     font-size: 28px;
 
     cursor: pointer;
-}
-
-
-/* ========================================
-   MOBILE SIDEBAR
-======================================== */
-
-.mobile-menu {
-    display: none;
-}
-
-
-/* ========================================
-   OVERLAY
-======================================== */
-
-.menu-overlay {
-    display: none;
 }
 
 
@@ -116,111 +99,81 @@ main {
 
 main h1 {
     margin: 0;
+
     font-size: 120px;
     font-weight: normal;
 }
 
 
 /* ========================================
-   RESPONSIVE
+   RESPONSIVE - MOBILE
 ======================================== */
 
 @media (max-width: 768px) {
+
+    /* ------------------------------------
+       TOPBAR
+    ------------------------------------ */
 
     .topbar {
         justify-content: flex-start;
         padding: 0 20px;
     }
 
-    .desktop-menu {
-        display: none;
-    }
+
+    /* ------------------------------------
+       HAMBURGER BUTTON
+    ------------------------------------ */
 
     .menu-toggle {
         display: block;
     }
 
+
+    /* ------------------------------------
+       NAVIGATION SIDEBAR
+    ------------------------------------ */
+
+    .navigation {
+        position: fixed;
+        top: 64px;
+        left: 0;
+
+        width: 75%;
+        max-width: 300px;
+        height: calc(100vh - 64px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 25px;
+        gap: 25px;
+
+        background: #ffffff;
+
+        border-right: 1px solid #e5e5e5;
+
+        /* Subtle shadow */
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
+
+        /* Hidden outside the viewport */
+        transform: translateX(-105%);
+
+        /* Smooth animation */
+        transition: transform 0.3s ease;
+
+        z-index: 999;
+    }
+
+
+    /* ------------------------------------
+       SIDEBAR OPEN STATE
+    ------------------------------------ */
+
+    .navigation.active {
+        transform: translateX(0);
+    }
+
 }
-
-/* ========================================
-   MOBILE SIDEBAR
-======================================== */
-
-.mobile-menu {
-    display: flex;
-    flex-direction: column;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 75%;
-    max-width: 300px;
-    height: 100vh;
-
-    padding: 80px 25px 25px;
-    gap: 25px;
-
-    background: #ffffff;
-
-    /* Keep the sidebar outside the viewport */
-    transform: translateX(-100%);
-
-    /* Animate the sidebar movement */
-    transition: transform 0.3s ease;
-
-    z-index: 1002;
-}
-
-.mobile-menu a {
-    color: #000000;
-    text-decoration: none;
-
-    font-size: 22px;
-}
-
-.mobile-menu a:hover {
-    opacity: 0.5;
-}
-
-
-/* ========================================
-   SIDEBAR OPEN STATE
-======================================== */
-
-.mobile-menu.active {
-    transform: translateX(0);
-}
-
-
-/* ========================================
-   BACKGROUND OVERLAY
-======================================== */
-
-.menu-overlay {
-    position: fixed;
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.4);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition:
-        opacity 0.3s ease,
-        visibility 0.3s ease;
-
-    z-index: 1001;
-}
-
-
-/* ========================================
-   OVERLAY VISIBLE STATE
-======================================== */
-
-.menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
 
